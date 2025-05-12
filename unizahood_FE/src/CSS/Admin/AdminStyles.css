@@ -1,0 +1,582 @@
+/* Základné rozloženie pre admin sekciu */
+.admin-layout {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+/* Štýly pre bočný panel */
+.admin-sidebar {
+  width: 250px;
+  min-width: 250px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  height: calc(100vh - 120px);
+  position: sticky;
+  top: 16px;
+}
+
+.admin-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.admin-divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 16px 0;
+}
+
+.admin-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-nav-item {
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-nav-item:hover {
+  background-color: var(--primary-color-light);
+}
+
+.admin-nav-item.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.admin-nav-icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.admin-nav-label {
+  font-weight: 500;
+}
+
+/* Štýly pre hlavný obsah */
+.admin-content {
+  flex-grow: 1;
+  background-color: var(--card-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  min-height: calc(100vh - 120px);
+}
+
+.admin-section-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.admin-section-content {
+  margin-top: 24px;
+}
+
+/* Základné štýly pre admin panel */
+.admin-container {
+  width: 100%;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Štýly pre vyhľadávanie */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+}
+
+.search-icon {
+  color: #666;
+  margin-right: 8px;
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  padding: 10px;
+  width: 250px;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Štýly pre tlačidlá */
+.admin-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.admin-button.primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.admin-button.secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.admin-button.danger {
+  background-color: #f44336;
+  color: white;
+}
+
+.admin-button:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.admin-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.button-icon {
+  font-size: 14px;
+}
+
+/* Štýly pre tabuľku */
+.admin-table-container {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  text-align: left;
+  padding: 12px;
+  border-bottom: 2px solid #ddd;
+}
+
+.admin-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Štýly pre riadky s nahlásením */
+.reported-row {
+  background-color: #fff8e1;
+}
+
+.reported-row:hover {
+  background-color: #ffecb3;
+}
+
+/* Štýly pre stavové texty */
+.status-error {
+  color: #f44336;
+  font-weight: 500;
+}
+
+.status-success {
+  color: #4caf50;
+  font-weight: 500;
+}
+
+/* Štýl pre alert */
+.admin-alert {
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-alert.error {
+  background-color: #ffebee;
+  color: #d32f2f;
+  border: 1px solid #ffcdd2;
+}
+
+.admin-alert.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+/* Štýly pre avatar a autora */
+.author-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.author-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out;
+}
+.author-avatar:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+/* Štýly pre miniatúry obrázkov komentárov */
+.comment-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.comment-image-thumbnail {
+  max-width: 60px;
+  max-height: 60px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  object-fit: cover;
+}
+
+.comment-image-thumbnail:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Štýly pre tlačidlá akcií */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.icon-button.primary {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.icon-button.danger {
+  background-color: #ffebee;
+  color: #f44336;
+}
+
+.icon-button.primary:hover {
+  background-color: #bbdefb;
+}
+
+.icon-button.danger:hover {
+  background-color: #ffcdd2;
+}
+
+.center-text {
+  text-align: center;
+}
+
+/* Štýly pre roly používateľov */
+.user-role {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.user-role.admin {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.user-role.user {
+  background-color: #f5f5f5;
+  color: #757575;
+}
+/* eventy */
+/* Štýly pre miniatúry obrázkov udalostí */
+.event-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.event-image-thumbnail {
+  width: 60px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.event-image-thumbnail:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.no-image {
+  color: #999;
+  font-style: italic;
+  font-size: 0.9em;
+}
+/* Štýly pre automatické stavy udalostí */
+.event-status.completed {
+  background-color: #f5f5f5;
+  color: #757575;
+}
+
+.event-status.upcoming {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.event-status.unknown {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* Štýly pre nastavenia */
+.settings-title {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.settings-section {
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.settings-section-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.settings-divider {
+  height: 1px;
+  background-color: #eee;
+  margin-bottom: 16px;
+}
+
+.settings-item {
+  margin-bottom: 16px;
+}
+
+.settings-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  margin-left: 10px;
+}
+
+.settings-description {
+  margin-top: 6px;
+  margin-left: 24px;
+  font-size: 13px;
+  color: #666;
+}
+
+.settings-input-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.settings-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.settings-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Responzívny dizajn pre menšie obrazovky */
+@media (max-width: 1100px) {
+  /* Zúžený sidebar s ikonkami */
+  .admin-sidebar {
+    width: 70px;
+    min-width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Skrytie textov navigačných položiek */
+  .admin-nav-label {
+    display: none;
+  }
+
+  /* Úprava navigačných položiek pre verziu len s ikonkami */
+  .admin-nav-item {
+    justify-content: center;
+    padding: 12px 8px;
+    width: 100%;
+  }
+
+  .admin-nav-icon {
+    margin-right: 0;
+    font-size: 18px;
+  }
+
+  /* Zmenšenie nadpisu */
+  .admin-title {
+    font-size: 0;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  /* Pridanie ikony menu namiesto textu titulku */
+  .admin-title::before {
+    content: "👑";
+    font-size: 22px;
+    display: block;
+  }
+
+  /* Prispôsobenie obsahu */
+  .admin-content {
+    padding: 16px;
+  }
+
+  .admin-section-title {
+    font-size: 18px;
+  }
+
+  /* Zmenšenie vyhľadávacieho poľa */
+  .search-input {
+    width: 150px;
+  }
+
+  /* Upravené tabuľky pre lepšie zobrazenie na menších obrazovkách */
+  .admin-table th,
+  .admin-table td {
+    padding: 8px;
+  }
+
+  /* Tooltip pre zobrazenie názvu sekcie pri hover nad ikonkou */
+  .admin-nav-item {
+    position: relative;
+  }
+
+  .admin-nav-item:hover::after {
+    content: attr(data-label);
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 10;
+    white-space: nowrap;
+    margin-left: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Ešte užšie obrazovky - mobilné zariadenia */
+@media (max-width: 768px) {
+  .admin-layout {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  .admin-nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .admin-nav-item {
+    margin: 0 4px;
+    padding: 8px;
+  }
+
+  .admin-title,
+  .admin-divider {
+    display: none;
+  }
+
+  .admin-content {
+    min-height: auto;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .admin-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

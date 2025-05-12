@@ -1,0 +1,227 @@
+/* Štýly pre sekciu "Zúčastním sa" */
+.event-attendance-section {
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.event-attendance-count {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.attendance-icon {
+  margin-right: 8px;
+  color: var(--primary-color);
+}
+
+.event-attendance-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.attendance-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.add-attendance {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.add-attendance:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.remove-attendance {
+  background-color: var(--danger-color, #dc3545);
+  color: white;
+}
+
+.remove-attendance:hover {
+  background-color: var(--danger-color-dark, #bb2d3b);
+}
+
+.attendance-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.event-attendance-login {
+  font-size: 15px;
+}
+
+.attendance-login-link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.attendance-login-link:hover {
+  text-decoration: underline;
+}
+/* COMMNENT SECTION BLURRED */
+/* Pridajte tieto štýly na koniec existujúceho súboru */
+
+/* Štýly pre sekciu komentárov */
+.comments-section {
+  background-color: var(--card-color, #fff);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid var(--border-color, #e5e7eb);
+}
+
+.comments-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: var(--text-primary, #1f2937);
+}
+
+.comments-icon {
+  color: var(--primary-color, #4f46e5);
+}
+
+/* Štýly pre rozmazanú sekciu */
+.comments-blurred {
+  position: relative;
+  min-height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.comments-blurred::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(243, 244, 246, 0.4);
+  z-index: 1;
+}
+
+.login-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding: 20px;
+  text-align: center;
+}
+
+.lock-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color, #4f46e5);
+  margin-bottom: 16px;
+}
+
+.login-overlay p {
+  font-size: 1.1rem;
+  color: var(--text-primary, #1f2937);
+  margin-bottom: 20px;
+  max-width: 400px;
+  font-weight: 500;
+}
+
+.login-button {
+  background-color: var(--primary-color, #4f46e5);
+  color: var(--text-primary-dark);
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  display: inline-block;
+}
+
+.login-button:hover {
+  color: var(--text-primary-dark);
+  background-color: var(--primary-color-dark, #4338ca);
+}
+
+/* Placeholder obsahu, ktorý bude rozmazaný */
+.blurred-content {
+  padding: 20px;
+}
+
+.sample-comment {
+  background-color: #f9fafb;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.sample-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  flex-shrink: 0;
+}
+
+.sample-text {
+  flex-grow: 1;
+}
+
+.sample-line {
+  height: 12px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.sample-line:last-child {
+  width: 70%;
+}
+
+/* Responzívny dizajn */
+@media (max-width: 768px) {
+  .login-overlay p {
+    font-size: 1rem;
+  }
+
+  .lock-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .event-attendance-section {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .event-attendance-count {
+    justify-content: center;
+  }
+}

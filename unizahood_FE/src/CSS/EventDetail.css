@@ -1,0 +1,144 @@
+.event-detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.event-detail-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.event-detail-header {
+  padding: 24px 30px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.event-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color, #4f46e5);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.event-meta-item {
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary, #6b7280);
+  font-size: 1rem;
+}
+
+.event-meta-icon {
+  color: var(--primary-color, #4f46e5);
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.event-carousel-container {
+  width: 100%;
+  background-color: #f9fafb;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.event-no-images {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  background-color: #f3f4f6;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.event-description {
+  padding: 30px;
+}
+
+.event-description h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+  margin-bottom: 16px;
+}
+
+.event-description p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #4b5563);
+  white-space: pre-line;
+}
+
+.event-categories {
+  padding: 0 30px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.event-category-tag {
+  background-color: var(--primary-color-light, #e0e7ff);
+  color: var(--primary-color, #4f46e5);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .event-detail-container {
+    padding: 12px;
+  }
+
+  .event-detail-header {
+    padding: 18px 20px;
+  }
+
+  .event-title {
+    font-size: 1.6rem;
+  }
+
+  .event-meta {
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .event-meta-item {
+    font-size: 0.9rem;
+  }
+
+  .event-carousel-container {
+    padding: 20px;
+  }
+
+  .event-description {
+    padding: 20px;
+  }
+
+  .event-description h2 {
+    font-size: 1.3rem;
+  }
+
+  .event-description p {
+    font-size: 1rem;
+  }
+
+  .event-categories {
+    padding: 0 20px 20px;
+  }
+}

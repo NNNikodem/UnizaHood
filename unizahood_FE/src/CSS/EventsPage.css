@@ -1,0 +1,272 @@
+.events-page-container {
+  display: flex;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 30px;
+}
+
+.events-sidebar-container {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.events-main-content {
+  flex-grow: 1;
+}
+
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.events-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.events-search-container {
+  display: flex;
+  align-items: center;
+  background-color: var(--card-color);
+  border-radius: 8px;
+  padding: 0 15px;
+  border: 1px solid var(--border-color);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.events-search-container:focus-within {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--primary-color-very-light);
+}
+
+.search-icon {
+  color: var(--text-secondary);
+  margin-right: 10px;
+}
+
+.events-search-input {
+  border: none;
+  background: transparent;
+  padding: 12px 0;
+  width: 250px;
+  outline: none;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.events-search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* Pôvodná definícia mriežky - upraviť */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(280px, 1fr)
+  ); /* Zníženie minimálnej šírky z 320px na 280px */
+  gap: 25px;
+}
+
+.event-card-wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.categories-grid {
+  margin: auto;
+  gap: 10px;
+}
+
+/* Sidebar štýly */
+.events-sidebar {
+  background-color: var(--card-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+.sidebar-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-item {
+  padding: 8px 10px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.category-item:hover {
+  background-color: var(--primary-color-very-light);
+}
+
+.category-item.active {
+  background-color: var(--primary-color-light);
+  color: white;
+}
+
+.category-icon {
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+/* Štýly pre stavy načítavania, chyby a prázdny obsah */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  color: var(--text-secondary);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  color: var(--text-error);
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.error-message {
+  font-size: 16px;
+  max-width: 500px;
+}
+
+.no-events-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.no-events-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  opacity: 0.6;
+}
+
+.no-events-search-hint {
+  font-size: 14px;
+  margin-top: 10px;
+  max-width: 300px;
+}
+
+/* Responzívny dizajn - upraviť */
+@media (max-width: 1400px) {
+  .events-grid {
+    grid-template-columns: repeat(3, 1fr); /* Force 3 stĺpce */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr); /* Force 2 stĺpce */
+    gap: 20px;
+  }
+  .events-sidebar-container {
+    width: fit-content; /* Zmenšenie šírky bočného panela */
+  }
+  .category-item {
+    font-size: 14px; /* Zmenšenie písma pre mobilné zariadenia */
+  }
+}
+
+@media (max-width: 850px) {
+  .events-page-container {
+    flex-direction: column;
+  }
+
+  .events-sidebar-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .events-grid {
+    grid-template-columns: 1fr; /* 1 stĺpec pre mobilné zariadenia */
+  }
+
+  .events-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .events-search-container {
+    width: 100%;
+  }
+
+  .events-search-input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .events-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .events-search-container {
+    width: 100%;
+  }
+
+  .events-search-input {
+    width: 100%;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+}

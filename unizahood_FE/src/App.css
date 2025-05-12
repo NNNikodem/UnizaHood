@@ -1,0 +1,151 @@
+:root {
+  --primary-color: #4f46e5;
+  --primary-color-dark: #6366f1;
+  --primary-color-light: #dbd4fa;
+  --primary-color-very-light: rgba(79, 70, 229, 0.1);
+  --secondary-color: #ec4899;
+  --secondary-color-dark: #f472b6;
+  --background-color: #f9fafb;
+  --background-color-dark: #1f2937;
+  --card-color: #ffffff;
+  --card-color-dark: #374151;
+  --border-color: #d1d5db;
+  --text-primary: #111827;
+  --text-primary-dark: #f9fafb;
+  --text-secondary: #6b7280;
+  --text-secondary-dark: #9ca3af;
+  --text-confirm: #10b981;
+  --text-confirm-dark: #6ee7b7;
+  --text-error: #ef4444;
+  --text-error-dark: #f87171;
+}
+#root {
+  margin: 0 auto;
+  padding: 0;
+  background-color: var(--background-color);
+}
+main {
+  padding: 0em 2em;
+}
+.page-title {
+  font-size: 2em;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-align: center;
+  margin: 2em auto;
+}
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--primary-color-dark);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+footer {
+  background-color: var(--background-color-dark);
+  color: var(--text-primary-dark);
+  padding: 1em;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+/* Štýly pre chybové a potvrdzovacie správy */
+
+.error-container,
+.confirm-container {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 6px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.error-container {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left: 4px solid var(--danger-color, #ef4444);
+}
+
+.confirm-container {
+  background-color: rgba(34, 197, 94, 0.1);
+  border-left: 4px solid var(--success-color, #22c55e);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.error-message {
+  color: var(--danger-color, #ef4444);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.confirm-message {
+  color: var(--success-color, #22c55e);
+  font-size: 0.95rem;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+
+.confirm-container a {
+  display: inline-block;
+  background-color: var(--success-color, #22c55e);
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 10px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.confirm-container a:hover {
+  background-color: var(--success-color-dark, #16a34a);
+  transform: translateY(-1px);
+}
+
+.confirm-container a:active {
+  transform: translateY(0);
+}
+/* Empty states */
+.empty-text {
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Animácia pre plynulé zobrazenie */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responzívne úpravy */
+@media (max-width: 576px) {
+  .error-container,
+  .confirm-container {
+    padding: 12px;
+  }
+
+  .error-message,
+  .confirm-message {
+    font-size: 0.9rem;
+  }
+}
